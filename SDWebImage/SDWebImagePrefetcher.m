@@ -72,9 +72,10 @@
             // Add last failed
             self.skippedCount++;
         }
-        if ([self.delegate respondsToSelector:@selector(imagePrefetcher:didPrefetchURL:finishedCount:totalCount:)]) {
+        if ([self.delegate respondsToSelector:@selector(imagePrefetcher:didPrefetchURL:withError:finishedCount:totalCount:)]) {
             [self.delegate imagePrefetcher:self
                             didPrefetchURL:currentURL
+                                 withError:error
                              finishedCount:self.finishedCount
                                 totalCount:self.prefetchURLs.count
              ];
