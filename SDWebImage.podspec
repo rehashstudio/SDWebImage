@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SDWebImage'
-  s.version = '4.3.3'
+  s.version = '4.4.6'
 
   s.osx.deployment_target = '10.9'
   s.ios.deployment_target = '7.0'
@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
 
   s.license = 'MIT'
   s.summary = 'Asynchronous image downloader with cache support with an UIImageView category.'
-  s.homepage = 'https://github.com/rs/SDWebImage'
+  s.homepage = 'https://github.com/SDWebImage/SDWebImage'
   s.author = { 'Olivier Poitrey' => 'rs@dailymotion.com' }
-  s.source = { :git => 'https://github.com/rs/SDWebImage.git', :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/SDWebImage/SDWebImage.git', :tag => s.version.to_s }
 
   s.description = 'This library provides a category for UIImageView with support for remote '      \
                   'images coming from the web. It provides an UIImageView category adding web '    \
@@ -46,9 +46,6 @@ Pod::Spec.new do |s|
     gif.source_files = 'SDWebImage/FLAnimatedImage/*.{h,m}'
     gif.dependency 'SDWebImage/Core'
     gif.dependency 'FLAnimatedImage', '~> 1.0'
-    gif.xcconfig = {
-      'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/FLAnimatedImage/FLAnimatedImage'
-    }
   end
 
   s.subspec 'WebP' do |webp|
@@ -62,6 +59,6 @@ Pod::Spec.new do |s|
       'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
     }
     webp.dependency 'SDWebImage/Core'
-    webp.dependency 'libwebp', '~> 0.5'
+    webp.dependency 'libwebp', '>= 0.5'
   end
 end
